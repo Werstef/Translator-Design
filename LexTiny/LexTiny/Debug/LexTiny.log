@@ -1,0 +1,7 @@
+﻿  Tiny.c
+  lex.yy.c
+Tiny.lex(16,9): warning C4013: 'comment' undefined; assuming extern returning int
+lex.yy.c(1581,46): warning C4013: 'isatty' undefined; assuming extern returning int
+  Generating Code...
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.lex(93): warning C4716: 'comment': must return a value
+  LexTiny.vcxproj -> D:\Translator Design\Translator-Design\LexTiny\Debug\LexTiny.exe
