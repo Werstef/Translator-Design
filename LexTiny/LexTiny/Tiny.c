@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "symbols.h"
+#include "Tiny.tab.h"
 #include <errno.h>
 
 extern FILE* yyin;
@@ -36,7 +36,8 @@ char* symbols[] = {
  "GREATER",
  "LESS",
  "NAME",
- "INT"
+ "INT",
+ "NEQUAL"
 };
 
 
@@ -44,7 +45,7 @@ int main() {
     int lexUnit = 0;
     yyin = fopen( "input.csrc", "rt" );
     if (yyin != NULL) {
-        while ((lexUnit = yylex()) != END)
+        while ((lexUnit = yylex()) != YYEOF)
         {
             printf(" -> TOKEN %s\n", symbols[lexUnit]);
         }

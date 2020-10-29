@@ -21,6 +21,9 @@
     <ClCompile Include="lex.yy.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tiny.tab.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Tiny.lex">
@@ -29,9 +32,15 @@
     <None Include="input.csrc">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="parser.y">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Tiny.y">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="symbols.h">
+    <ClInclude Include="Tiny.tab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

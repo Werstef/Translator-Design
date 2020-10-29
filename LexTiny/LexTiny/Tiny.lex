@@ -7,7 +7,7 @@ IS		(u|U|l|L)*
 
 %{
 #include <stdio.h>
-#include "symbols.h"
+#include "Tiny.tab..h"
 
 void count();
 %}
@@ -44,8 +44,8 @@ L?\"(\\.|[^\\"])*\"		{ count(); return(STRING_LITERAL); }
 
 "("			{ count(); return(LPAR); }
 ")"			{ count(); return(RPAR); }
-"{"			{ count(); return(LBRANCE); }
-"}"			{ count(); return(RBRANCE); }
+"{"			{ count(); return(LBRACE); }
+"}"			{ count(); return(RBRACE); }
 "["			{ count(); return(LBRACK); }
 "]"			{ count(); return(RBRACK); }
 "="			{ count(); return(ASSIGN); }
@@ -58,19 +58,23 @@ L?\"(\\.|[^\\"])*\"		{ count(); return(STRING_LITERAL); }
 "=="		{ count(); return(EQUAL); }
 ">"			{ count(); return(GREATER); }
 "<"			{ count(); return(LESS); }
+"!="		{ count(); return(NEQUAL); }
 
 
 
 
 
-[ \t\v\n\f]		{ count(); }
-.			{ /* ignore bad characters */ }
+[ \t\v\n\f]		{ count(); print_error();}
 
 %%
 
 yywrap()
 {
 	return(1);
+}
+
+print_error(){
+	printf("Bad character: %s\n", yytext);
 }
 
 

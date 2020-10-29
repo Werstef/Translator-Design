@@ -147,13 +147,16 @@
   <ItemGroup>
     <ClCompile Include="lex.yy.c" />
     <ClCompile Include="Tiny.c" />
+    <ClCompile Include="Tiny.tab.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="input.csrc" />
+    <None Include="parser.y" />
     <None Include="Tiny.lex" />
+    <None Include="Tiny.y" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="symbols.h" />
+    <ClInclude Include="Tiny.tab.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,8 +15,8 @@
 #define NUMBER 12
 #define LPAR 13
 #define RPAR 14
-#define LBRANCE 15
-#define RBRANCE 16
+#define LBRACE 15
+#define RBRACE 16
 #define LBRACK 17
 #define RBRACK 18
 #define ASSIGN 19
@@ -31,6 +31,7 @@
 #define LESS 28
 #define NAME 29
 #define INT 30
+#define NEQUAL 31
 
 #endif
 
