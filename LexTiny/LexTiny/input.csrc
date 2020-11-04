@@ -1,9 +1,10 @@
-int a = 2048;
-'x'
-"x"
-123
-sdaw
-
-if( a == 2){
- a = 30;
+int main () {
+int a;
+int b = 20;
+int[20] x;
+int sum;
+sum = a + b;
+if (x > 5) {
+	int c = 2;
+	}
 }

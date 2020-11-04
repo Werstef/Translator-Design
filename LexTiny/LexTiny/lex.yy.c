@@ -990,7 +990,7 @@ case 37:
 /* rule 37 can match eol */
 YY_RULE_SETUP
 #line 67 "Tiny.lex"
-{ count(); print_error();}
+{ count();}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP

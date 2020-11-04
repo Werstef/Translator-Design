@@ -1,5 +1,7 @@
 %{
 #include <stdio.h>
+int yyerror(char * s);
+extern int yylex(void);
 %}
 
 %token INT
@@ -85,6 +87,7 @@ var_declaration_list
 
 var_declaration
 	: type NAME SEMICOLON
+	| type NAME ASSIGN NUMBER SEMICOLON
 	;
 
 statements_list
@@ -156,7 +159,9 @@ var
 
 %%
 
-int yyerror(char *errmsg)
-{
-     fprintf("%s \n", errmsg);
-}
+int yyerror(char * s) 
+/* yacc error handler */
+{    
+	printf ( "%s\n", s); 
+	return 0;
+}  

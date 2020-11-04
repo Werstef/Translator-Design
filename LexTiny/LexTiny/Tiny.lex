@@ -7,7 +7,7 @@ IS		(u|U|l|L)*
 
 %{
 #include <stdio.h>
-#include "Tiny.tab..h"
+#include "Tiny.tab.h"
 
 void count();
 %}
@@ -64,7 +64,7 @@ L?\"(\\.|[^\\"])*\"		{ count(); return(STRING_LITERAL); }
 
 
 
-[ \t\v\n\f]		{ count(); print_error();}
+[ \t\v\n\f]		{ count();}
 
 %%
 

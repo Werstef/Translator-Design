@@ -1,14 +1,8 @@
-﻿  lex.yy.c
-Tiny.lex(16,9): warning C4013: 'comment' undefined; assuming extern returning int
-Tiny.lex(67,23): warning C4013: 'print_error' undefined; assuming extern returning int
-lex.yy.c(1581,46): warning C4013: 'isatty' undefined; assuming extern returning int
-  Tiny.c
+﻿  Tiny.c
   Tiny.tab.c
-Tiny.tab.c(1096,22): warning C4013: 'yylex' undefined; assuming extern returning int
-Tiny.tab.c(1231,15): warning C4013: 'yyerror' undefined; assuming extern returning int
-Tiny.y(161,21): warning C4133: 'function': incompatible types - from 'char [5]' to 'FILE *const '
+  lex.yy.c
+Tiny.lex(16,9): warning C4013: 'comment' undefined; assuming extern returning int
+lex.yy.c(1581,46): warning C4013: 'isatty' undefined; assuming extern returning int
   Generating Code...
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.y(162): warning C4716: 'yyerror': must return a value
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.lex(78): warning C4716: 'print_error': must return a value
 D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.lex(97): warning C4716: 'comment': must return a value
   LexTiny.vcxproj -> D:\Translator Design\Translator-Design\LexTiny\Debug\LexTiny.exe

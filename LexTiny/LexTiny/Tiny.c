@@ -2,6 +2,7 @@
 #include "Tiny.tab.h"
 #include <errno.h>
 
+extern int yyparse(void);
 extern FILE* yyin;
 extern int yylex(void);
 
@@ -41,17 +42,40 @@ char* symbols[] = {
 };
 
 
-int main() {
-    int lexUnit = 0;
-    yyin = fopen( "input.csrc", "rt" );
-    if (yyin != NULL) {
-        while ((lexUnit = yylex()) != YYEOF)
+int main()
+{
+    //int lexUnit = 0;
+    //yydebug = 1;
+    yyin = fopen("input.csrc", "rt");
+    if (yyin != NULL)
+    {
+        int result = yyparse();
+        switch (result)
         {
-            printf(" -> TOKEN %s\n", symbols[lexUnit]);
+        case 0:
+            printf("Parse successfull.\n");
+            break;
+
+        case 1:
+            printf("Invalid input encountered\n");
+            break;
+
+        case 2:
+            printf("Out of memory\n");
+            break;
+
+        default:
+            break;
         }
+        /*while ((lexUnit = yylex()) != END)
+        {
+            printf(" -> TOKEN: %s\n", symbols[lexUnit]);
+        }*/
         fclose(yyin);
     }
-    else {
-        printf("Erorr: %d", errno);
+    else
+    {
+        printf("Fisier inexistent");
     }
+
 }
