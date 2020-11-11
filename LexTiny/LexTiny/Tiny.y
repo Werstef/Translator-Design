@@ -96,8 +96,8 @@ statements_list
 	;
 
 statements 
-	: statements SEMICOLON statement
-	| statement
+	: statements  statement
+	| statement SEMICOLON
 	;
 
 statement

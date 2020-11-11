@@ -5,6 +5,7 @@
 extern int yyparse(void);
 extern FILE* yyin;
 extern int yylex(void);
+extern int yydebug;
 
 char* symbols[] = {
     "END",
