@@ -153,6 +153,7 @@ win_bison Tiny.y --defines</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ast.c" />
     <ClCompile Include="lex.yy.c" />
     <ClCompile Include="Tiny.c" />
     <ClCompile Include="Tiny.tab.c" />
@@ -164,6 +165,7 @@ win_bison Tiny.y --defines</Command>
     <None Include="Tiny.y" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ast.h" />
     <ClInclude Include="Tiny.tab.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

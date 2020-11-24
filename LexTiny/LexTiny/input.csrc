@@ -1,15 +1,7 @@
-int main () {
-int a;
-int b = 20;
-int[20] x;
-int sum;
-sum = a + b;
-if (x > 5) {
-	int c = 2;
-	c = x + sum;
-	}
-else{ 
-	int c = 6;
-	}
-}
+int ab = 120;
 
+int abcd(int a){
+	int ab;
+	if( jhhjsd){}
+
+}

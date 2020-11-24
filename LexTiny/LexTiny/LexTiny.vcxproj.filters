@@ -24,6 +24,9 @@
     <ClCompile Include="Tiny.tab.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Tiny.lex">
@@ -41,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tiny.tab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

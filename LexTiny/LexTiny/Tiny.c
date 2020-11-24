@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include "Tiny.tab.h"
+#include "ast.h"
 #include <errno.h>
 
 extern int yyparse(void);
 extern FILE* yyin;
 extern int yylex(void);
 extern int yydebug;
+extern Node* astRoot;
 
 char* symbols[] = {
     "END",
@@ -72,6 +74,7 @@ int main()
         {
             printf(" -> TOKEN: %s\n", symbols[lexUnit]);
         }*/
+        printAst(astRoot, 0);
         fclose(yyin);
     }
     else

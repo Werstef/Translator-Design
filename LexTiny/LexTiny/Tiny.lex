@@ -7,6 +7,7 @@ IS		(u|U|l|L)*
 
 %{
 #include <stdio.h>
+#include "ast.h"
 #include "Tiny.tab.h"
 
 void count();
@@ -28,11 +29,11 @@ void count();
 
 
 
-{L}({L}|{D})*		{ count(); return(NAME); }
-{D}*			{ count(); return(NUMBER); }
-('.')			{ count(); return(QCHAR); }
-0{D}+{IS}?		    { count(); return(CONSTANT); }
-{D}+{IS}?		    { count(); return(CONSTANT); }
+{L}({L}|{D})*		{ count(); yylval.strings = strdup(yytext); return(NAME); }
+{D}*			{ count(); yylval.intVal = atoi(yytext); return(NUMBER); }
+('.')			{ count(); yylval.strings = strdup(yytext); return(QCHAR); }
+0{D}+{IS}?		    { count(); yylval.intVal = atoi(yytext); return(CONSTANT); }
+{D}+{IS}?		    { count(); yylval.intVal = atoi(yytext); return(CONSTANT); }
 {D}+{E}{FS}?		{ count(); return(CONSTANT); }
 {D}*"."{D}+({E})?{FS}?	{ count(); return(CONSTANT); }
 {D}+"."{D}*({E})?{FS}?	{ count(); return(CONSTANT); }
