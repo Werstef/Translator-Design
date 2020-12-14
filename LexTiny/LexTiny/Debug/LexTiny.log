@@ -1,60 +1,40 @@
-﻿  lex.yy.c
-Tiny.lex(17,9): warning C4013: 'comment' undefined; assuming extern returning int
-lex.yy.c(1582,46): warning C4013: 'isatty' undefined; assuming extern returning int
+﻿  ast.c
+  lex.yy.c
+Tiny.lex(18,9): warning C4013: 'comment' undefined; assuming extern returning int
+lex.yy.c(1583,46): warning C4013: 'isatty' undefined; assuming extern returning int
   Tiny.c
-Tiny.y(12,2): error C2061: syntax error: identifier 'Node'
-Tiny.tab.h(104,1): error C2059: syntax error: '}'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(27,2): error C2061: syntax error: identifier 'SymTableNode'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(28,1): error C2059: syntax error: '}'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,57): error C2143: syntax error: missing ')' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,57): error C2081: 'SymTableNode': name in formal parameter list illegal
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,57): error C2143: syntax error: missing '{' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,72): error C2059: syntax error: ')'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,34): error C2143: syntax error: missing ')' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,34): error C2143: syntax error: missing '{' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,48): error C2059: syntax error: ')'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,36): error C2040: 'symTableroot': 'int *' differs in levels of indirection from 'int **'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,13): error C2143: syntax error: missing '{' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,49): error C2143: syntax error: missing ')' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,49): error C2143: syntax error: missing '{' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,51): error C2040: 'symTableroot': 'int *' differs in levels of indirection from 'int **'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,65): error C2371: 'SymTableEntry': redefinition; different basic types
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(23): message : see declaration of 'SymTableEntry'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,78): error C2143: syntax error: missing ';' before '*'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,89): error C2059: syntax error: ')'
   Tiny.tab.c
-Tiny.y(129,144): warning C4047: 'function': 'int' differs in levels of indirection from 'Node *'
-Tiny.y(129,144): warning C4024: 'createArrayDeclaration': different types for formal and actual parameter 3
-Tiny.y(146,89): warning C4133: 'function': incompatible types - from 'Node *' to 'const char *'
-Tiny.y(147,104): warning C4133: 'function': incompatible types - from 'Node *' to 'const char *'
-Tiny.y(148,78): warning C4013: 'createWhileStatement' undefined; assuming extern returning int
-Tiny.y(148,113): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(149,65): warning C4013: 'createAssignStatement' undefined; assuming extern returning int
-Tiny.y(149,100): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(150,60): warning C4013: 'createReturnStatement' undefined; assuming extern returning int
-Tiny.y(150,77): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(151,66): warning C4013: 'createFunctionCall' undefined; assuming extern returning int
-Tiny.y(151,105): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(153,53): warning C4013: 'createWriteNode' undefined; assuming extern returning int
-Tiny.y(153,70): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(154,52): warning C4013: 'createReadNode' undefined; assuming extern returning int
-Tiny.y(154,69): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(158,45): warning C4013: 'createVarNode' undefined; assuming extern returning int
-Tiny.y(158,62): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(159,65): warning C4013: 'createExpArray' undefined; assuming extern returning int
-Tiny.y(159,101): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(162,39): warning C4013: 'createLExp' undefined; assuming extern returning int
-Tiny.y(162,56): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(163,56): warning C4013: 'createBinopExp' undefined; assuming extern returning int
-Tiny.y(163,109): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(164,55): warning C4013: 'createUnopExp' undefined; assuming extern returning int
-Tiny.y(164,90): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(165,60): warning C4013: 'createParameterExp' undefined; assuming extern returning int
-Tiny.y(165,78): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(166,51): warning C4013: 'createNumberNode' undefined; assuming extern returning int
-Tiny.y(166,70): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(167,105): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(168,48): warning C4013: 'createQChrNode' undefined; assuming extern returning int
-Tiny.y(168,68): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(169,55): warning C4013: 'createSizeArray' undefined; assuming extern returning int
-Tiny.y(169,72): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(173,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(174,36): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(175,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(176,40): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(177,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(178,40): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(179,42): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(180,36): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(184,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(185,39): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(189,47): warning C4013: 'createParameter' undefined; assuming extern returning int
-Tiny.y(189,64): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(198,41): warning C4013: 'createExp' undefined; assuming extern returning int
-Tiny.y(198,58): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
-Tiny.y(202,50): warning C4013: 'createVarNameNode' undefined; assuming extern returning int
-Tiny.y(202,70): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(129,145): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'
+Tiny.y(129,145): warning C4024: 'createCharVarDeclaration': different types for formal and actual parameter 3
+Tiny.y(130,144): warning C4047: 'function': 'int' differs in levels of indirection from 'Node *'
+Tiny.y(130,144): warning C4024: 'createArrayDeclaration': different types for formal and actual parameter 3
+Tiny.y(174,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(175,36): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(176,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(177,40): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(178,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(179,40): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(180,42): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(181,36): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(185,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+Tiny.y(186,39): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
   Generating Code...
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.lex(98): warning C4716: 'comment': must return a value
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.lex(99): warning C4716: 'comment': must return a value

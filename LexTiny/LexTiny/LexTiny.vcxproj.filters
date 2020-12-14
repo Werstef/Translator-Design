@@ -27,6 +27,9 @@
     <ClCompile Include="ast.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SemanticAnalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Tiny.lex">
@@ -43,10 +46,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Tiny.tab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ast.h">
+    <ClInclude Include="SemanticAnalyzer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

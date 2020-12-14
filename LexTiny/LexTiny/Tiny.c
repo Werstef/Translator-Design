@@ -1,7 +1,9 @@
-#include <stdio.h>
-#include "Tiny.tab.h"
 #include "ast.h"
+#include "Tiny.tab.h"
+#include "SemanticAnalyzer.h"
+#include <stdio.h>
 #include <errno.h>
+#include <string.h>
 
 extern int yyparse(void);
 extern FILE* yyin;
@@ -9,40 +11,6 @@ extern int yylex(void);
 extern int yydebug;
 extern Node* astRoot;
 
-char* symbols[] = {
-    "END",
- "CHAR",
- "IF",
- "ELSE",
- "RETURN",
- "WRITE",
- "READ",
- "LENGTH",
- "WHILE",
- "CONSTANT",
- "STRING_LITERAL",
- "QCHAR",
- "NUMBER",
- "LPAR",
- "RPAR",
- "LBRANCE",
- "RBRANCE",
- "LBRACK",
- "RBRACK",
- "ASSIGN",
- "SEMICOLON",
- "COMMA",
- "PLUS",
- "MINUS",
- "TIMES",
- "DIVIDE",
- "EQUAL",
- "GREATER",
- "LESS",
- "NAME",
- "INT",
- "NEQUAL"
-};
 
 
 int main()
@@ -75,6 +43,12 @@ int main()
             printf(" -> TOKEN: %s\n", symbols[lexUnit]);
         }*/
         printAst(astRoot, 0);
+
+        /*SymTableNode** root = NULL;
+        *root = NULL;
+        createSymbolList(astRoot, 0, root);
+        printSymbolList(*root);*/
+
         fclose(yyin);
     }
     else

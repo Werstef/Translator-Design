@@ -10,6 +10,7 @@ IS		(u|U|l|L)*
 #include "ast.h"
 #include "Tiny.tab.h"
 
+
 void count();
 %}
 
