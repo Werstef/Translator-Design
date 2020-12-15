@@ -27,7 +27,7 @@
     <ClCompile Include="ast.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SemanticAnalyzer.cpp">
+    <ClCompile Include="SemanticAnalyzer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

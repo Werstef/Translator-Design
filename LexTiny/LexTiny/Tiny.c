@@ -44,10 +44,10 @@ int main()
         }*/
         printAst(astRoot, 0);
 
-        /*SymTableNode** root = NULL;
-        *root = NULL;
-        createSymbolList(astRoot, 0, root);
-        printSymbolList(*root);*/
+        SymTableNode* root = NULL;
+
+        createSymbolList(astRoot, 0, &root);
+        printSymbolList(root);
 
         fclose(yyin);
     }

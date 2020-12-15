@@ -1,26 +1,9 @@
-﻿  ast.c
-  lex.yy.c
-Tiny.lex(18,9): warning C4013: 'comment' undefined; assuming extern returning int
-lex.yy.c(1583,46): warning C4013: 'isatty' undefined; assuming extern returning int
+﻿  SemanticAnalyzer.c
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(14,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(83,19): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(121,27): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(123,26): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
   Tiny.c
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(27,2): error C2061: syntax error: identifier 'SymTableNode'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(28,1): error C2059: syntax error: '}'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,57): error C2143: syntax error: missing ')' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,57): error C2081: 'SymTableNode': name in formal parameter list illegal
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,57): error C2143: syntax error: missing '{' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(31,72): error C2059: syntax error: ')'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,34): error C2143: syntax error: missing ')' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,34): error C2143: syntax error: missing '{' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,48): error C2059: syntax error: ')'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(32,36): error C2040: 'symTableroot': 'int *' differs in levels of indirection from 'int **'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,13): error C2143: syntax error: missing '{' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,49): error C2143: syntax error: missing ')' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,49): error C2143: syntax error: missing '{' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,51): error C2040: 'symTableroot': 'int *' differs in levels of indirection from 'int **'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,65): error C2371: 'SymTableEntry': redefinition; different basic types
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(23): message : see declaration of 'SymTableEntry'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,78): error C2143: syntax error: missing ';' before '*'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.h(33,89): error C2059: syntax error: ')'
   Tiny.tab.c
 Tiny.y(129,145): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'
 Tiny.y(129,145): warning C4024: 'createCharVarDeclaration': different types for formal and actual parameter 3
@@ -36,5 +19,9 @@ Tiny.y(180,42): warning C4047: '=': 'Node *' differs in levels of indirection fr
 Tiny.y(181,36): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
 Tiny.y(185,38): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
 Tiny.y(186,39): warning C4047: '=': 'Node *' differs in levels of indirection from 'int'
+  lex.yy.c
+Tiny.lex(18,9): warning C4013: 'comment' undefined; assuming extern returning int
+lex.yy.c(1583,46): warning C4013: 'isatty' undefined; assuming extern returning int
   Generating Code...
 D:\Translator Design\Translator-Design\LexTiny\LexTiny\Tiny.lex(99): warning C4716: 'comment': must return a value
+  LexTiny.vcxproj -> D:\Translator Design\Translator-Design\LexTiny\Debug\LexTiny.exe
