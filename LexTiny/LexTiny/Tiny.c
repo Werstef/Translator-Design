@@ -46,7 +46,7 @@ int main()
 
         SymTableNode* root = NULL;
 
-        createSymbolList(astRoot, 0, &root);
+        createSymbolList(astRoot, 0, &root, "Global");
         printSymbolList(root);
 
         fclose(yyin);

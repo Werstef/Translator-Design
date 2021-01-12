@@ -1,12 +1,14 @@
 int ab = 120;
 int x = 3;
 int a;
+int a = 13;
 char z ='s';
 
 int main () {
 	a = 13;
 	if (a > 5){
 		int y = 10;
+		int ac = 3;
 		while( x > 3)
 			a = a + 1;
 		

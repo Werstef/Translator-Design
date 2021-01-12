@@ -4,7 +4,7 @@
 
 
 
-void createSymbolList(Node* ast, int level, SymTableNode** root) {
+void createSymbolList(Node* ast, int level, SymTableNode** root, char* contextName) {
 	int index = 0;
 	if (ast) {
 		/*SymTableEntry* symTableEntry = (SymTableEntry*)malloc(sizeof(SymTableEntry));
@@ -13,57 +13,71 @@ void createSymbolList(Node* ast, int level, SymTableNode** root) {
 		char* dataType = NULL;
 		int symbolType = NULL;
 		IdentifierScope symbolScope = 0;
-		char* contextName = NULL;
+		char* aux = NULL;
+		int samecontext = 0;
+		int declared = 0;
+		// char* contextName = NULL;
 
 		if (strcmp(ast->type, "VariableDeclaration") == 0) {
 			//SymTableEntry* symTableEntry = (SymTableEntry*)malloc(sizeof(SymTableEntry));
 			
 
-			contextName = ast->type;
+			//contextName = ast->type;
 			dataType = ast->links[0]->extraData;
 			symbolName = ast->extraData;
 			symbolType = 1;
 			if (level == 2) {
 				symbolScope = Global;
+				//contextName = "Global";
 			}
 			else {
 				symbolScope = Local;
 			}
 		}
 		else if (strcmp(ast->type, "FunctionDefinition") == 0) {
-			//SymTableEntry* symTableEntry = (SymTableEntry*)malloc(sizeof(SymTableEntry));
-			/*strcpy(symTableEntry->contextName, ast->type);
-			strcpy(symTableEntry->dataType, ast->links[0]->extraData);
-			strcpy(symTableEntry->symbolName, ast->extraData);
-			symTableEntry->symbolType = 2;
-			if (level = 1) {
-				symTableEntry->symbolScope = Global;
-			}
-			else {
-				symTableEntry->symbolScope = Local;
-			}*/
 
-			contextName = ast->type;
+			aux = contextName;
+			contextName = ast->extraData;
 			dataType = ast->links[0]->extraData;
 			symbolName = ast->extraData;
 			symbolType = 2;
 			if (level == 1) {
 				symbolScope = Global;
+				//contextName = "Global";
 			}
 			else {
 				symbolScope = Local;
 			}
 		}
 
-		if (dataType != NULL && symbolName != NULL) {
-			
-			addEntryToSymbolTable(root, symbolName, dataType, symbolType, symbolScope, contextName);
+		if (strcmp(ast->type, "VarNameNode") == 0) {
+			// search table for ast->extra data daca exista ca simbol, daca da e ok, daca nu eroare
+			//de facut o functie de search separat
+			declared = SearchNodeVarNameSymTable(*root, ast->extraData, contextName);
+		}
+
+		if (symbolName != NULL && contextName != NULL) {
+			if (aux != NULL) {
+				samecontext = SearchNodeContextSymTable(*root, symbolName, aux);
+			}
+			else {
+				samecontext = SearchNodeContextSymTable(*root, symbolName, contextName);
+			}
+		}
+
+		if (dataType != NULL && symbolName != NULL && samecontext == 0) {
+			if (aux != NULL) {
+				addEntryToSymbolTable(root, symbolName, dataType, symbolType, symbolScope, aux);
+			}
+			else {
+				addEntryToSymbolTable(root, symbolName, dataType, symbolType, symbolScope, contextName);
+			}
 		}
 
 		
 
 		for (index = 0; index < ast->numLinks; index++) {
-			createSymbolList(ast->links[index], level + 1, root);
+			createSymbolList(ast->links[index], level + 1, root, contextName);
 		}
 		
 
@@ -105,7 +119,12 @@ void addEntryToSymbolTable(SymTableNode** symTableroot, char* symbolName, char* 
 	strcpy(symTableEntry->dataType, dataType);
 	symTableEntry->symbolType = symbolType;
 	symTableEntry->symbolScope = symbolScope;
-	strcpy(symTableEntry->contextName, contextName);
+	if (contextName != NULL) {
+		strcpy(symTableEntry->contextName, contextName);
+	}
+	else {
+		strcpy(symTableEntry->contextName, "Global");
+	}
 
 	SymTableNode* newNode = (SymTableNode*)malloc(sizeof(SymTableNode));
 	newNode->symbolEntry = symTableEntry;
@@ -123,4 +142,59 @@ void addEntryToSymbolTable(SymTableNode** symTableroot, char* symbolName, char* 
 		auxNode->next = newNode;
 	}
 
+}
+
+int SearchNodeContextSymTable(SymTableNode* SymTableHead, char* symbolName, char* contextname) {
+	SymTableNode* auxNode = SymTableHead;
+
+	while (auxNode != NULL) {
+		SymTableEntry* auxEntry = auxNode->symbolEntry;
+		int found = 0;
+		if (symbolName != NULL) {
+			if (strcmp(symbolName, auxEntry->symbolName) == 0) {
+				found = 1;
+			}
+		}
+		if (found == 1) {
+			if (strcmp(contextname, auxEntry->contextName) == 0) {
+				printf("\nError: The variable %s has already been declared in the context %s \n\n", symbolName, contextname);
+				return 1;
+			}
+		}
+		auxNode = auxNode->next;
+	}
+	
+	//else {
+	//	printf("The SymTable is still Empty! \n");
+	//}
+	return 0;
+}
+
+int SearchNodeVarNameSymTable(SymTableNode* SymTableHead, char* symbolName, char* contextname) {
+	SymTableNode* auxNode = SymTableHead;
+
+	while (auxNode != NULL) {
+		SymTableEntry* auxEntry = auxNode->symbolEntry;
+		int found = 0;
+		if (symbolName != NULL) {
+			if (strcmp(symbolName, auxEntry->symbolName) == 0) {
+				found = 1;
+			}
+		}
+		if (found == 1) {
+			if (strcmp(contextname, auxEntry->contextName) == 0 || strcmp("Global", auxEntry->contextName) == 0) {
+				if(strcmp("Global", auxEntry->contextName) == 0)
+					printf("\nThe variable %s has been declared in the context %s \n\n", symbolName, auxEntry->contextName);
+				else
+					printf("\nThe variable %s has been declared in the context %s \n\n", symbolName, contextname);
+				return 1;
+			}
+		}
+		auxNode = auxNode->next;
+	}
+	//else {
+	//	printf("The SymTable is still Empty! \n");
+	//}
+	printf("\nError: The variable %s has not been declared in the context %s \n\n", symbolName, contextname);
+	return 0;
 }

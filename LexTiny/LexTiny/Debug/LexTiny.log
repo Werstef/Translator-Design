@@ -1,8 +1,10 @@
 ﻿  SemanticAnalyzer.c
 D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(14,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(83,19): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(121,27): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
-D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(123,26): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(97,19): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(140,27): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(142,26): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(164,26): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
+D:\Translator Design\Translator-Design\LexTiny\LexTiny\SemanticAnalyzer.c(193,26): warning C4133: '=': incompatible types - from 'SymTableNode *' to 'SymTableNode *'
   Tiny.c
   Tiny.tab.c
 Tiny.y(129,145): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'

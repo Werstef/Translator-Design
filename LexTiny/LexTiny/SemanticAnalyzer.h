@@ -10,6 +10,7 @@
 #define MAX_DATATYPE_NAME 250
 
 typedef enum IdentifierScope { Local = 0, Global } IdentifierScope;
+//typedef enum SymbolType { Variable = 0, Function } IdentifierScope;
 struct symbolTableNode;
 struct SymTableEntry;
 
@@ -30,9 +31,11 @@ typedef struct symbolTableNode {
 }SymTableNode;
 
 
-void createSymbolList(Node* ast, int level, SymTableNode** symTableroot);
+void createSymbolList(Node* ast, int level, SymTableNode** symTableroot, char* contextName);
 void printSymbolList(SymTableNode* symTableroot);
 void addEntryToSymbolTable(SymTableNode** symTableroot, char* symbolName, char* dataType, int symbolType,
 	IdentifierScope symbolScope, char* contextName);
+int SearchNodeContextSymTable(SymTableNode* SymTableHead, char* symbolName, char* contextname);
+int SearchNodeVarNameSymTable(SymTableNode* SymTableHead, char* symbolName, char* contextname);
 
 #endif
